@@ -1,0 +1,113 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "alexabootcampignacio",
+            "intents": [
+                {
+                    "name": "AMAZON.FallbackIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": []
+                },
+                {
+                    "name": "HelloWorldIntent",
+                    "slots": [],
+                    "samples": [
+                        "how you doing",
+                        "what's up",
+                        "say hello",
+                        "say hi",
+                        "hello world"
+                    ]
+                },
+                {
+                    "name": "BuyCandyIntent",
+                    "slots": [
+                        {
+                            "name": "candy",
+                            "type": "SlotCandy"
+                        }
+                    ],
+                    "samples": [
+                        "buy a {candy}",
+                        "buy me a {candy}",
+                        "buy {candy}",
+                        "give me a {candy}",
+                        "i need a {candy}",
+                        "i need {candy}",
+                        "please buy me a {candy}",
+                        "please buy {candy}",
+                        "i want to buy {candy}"
+                    ]
+                }
+            ],
+            "types": [
+                {
+                    "name": "SlotCandy",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "smoothies"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "peanut butter"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "milkshakes"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "caramel"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "snack"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "ice cream",
+                                "synonyms": [
+                                    "vanilla ice cream"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "chocolate",
+                                "synonyms": [
+                                    "white chocolate",
+                                    "chocolate bars",
+                                    "milk chocolate",
+                                    "chocolates",
+                                    "chocolate bar",
+                                    "dark chocolate"
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
