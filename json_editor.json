@@ -53,6 +53,38 @@
                         "please buy {candy}",
                         "i want to buy {candy}"
                     ]
+                },
+                {
+                    "name": "BuyProductIntent",
+                    "slots": [
+                        {
+                            "name": "device",
+                            "type": "AMAZON.DeviceType",
+                            "samples": [
+                                "i want a {device}",
+                                "{device}",
+                                "a {device}"
+                            ]
+                        },
+                        {
+                            "name": "color",
+                            "type": "AMAZON.Color",
+                            "samples": [
+                                "{color}"
+                            ]
+                        },
+                        {
+                            "name": "country",
+                            "type": "AMAZON.Country"
+                        }
+                    ],
+                    "samples": [
+                        "i want a {color} device",
+                        "i want a {device} in color {color} to {country}",
+                        "i need a {device} in {color}",
+                        "i want to buy a device to be delivered in {country}",
+                        "i want to buy a device"
+                    ]
                 }
             ],
             "types": [
@@ -108,6 +140,86 @@
                     ]
                 }
             ]
-        }
+        },
+        "dialog": {
+            "intents": [
+                {
+                    "name": "BuyProductIntent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "device",
+                            "type": "AMAZON.DeviceType",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.1480364157206.4223679393"
+                            }
+                        },
+                        {
+                            "name": "color",
+                            "type": "AMAZON.Color",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.1480364157206.750683252793"
+                            }
+                        },
+                        {
+                            "name": "country",
+                            "type": "AMAZON.Country",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.1480364157206.464496684233"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "delegationStrategy": "ALWAYS"
+        },
+        "prompts": [
+            {
+                "id": "Elicit.Slot.1480364157206.4223679393",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Please, inform a device"
+                    },
+                    {
+                        "type": "PlainText",
+                        "value": "Which device?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.1480364157206.750683252793",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "In what color?"
+                    },
+                    {
+                        "type": "PlainText",
+                        "value": "Which color?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.1480364157206.464496684233",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Where?"
+                    },
+                    {
+                        "type": "PlainText",
+                        "value": "Which country?"
+                    }
+                ]
+            }
+        ]
     }
 }
